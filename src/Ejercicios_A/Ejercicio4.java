@@ -1,5 +1,6 @@
 package Ejercicios_A;
 
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Ejercicio4 {
@@ -9,90 +10,56 @@ public class Ejercicio4 {
     //mes con 28 o 29 dias = febrero(2)
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
+        GregorianCalendar calendar = new GregorianCalendar();
         int mes, a;
         System.out.print("Dame el mes: ");
         mes = leer.nextInt();
-        System.out.println("Dame el año: ");
+        System.out.print("Dame el año: ");
         a = leer.nextInt();
 
-        //comprobamos si es año bisiesto para sumar un dia a febrero 
-        if (a % 4 == 0 && a % 100 == 0 && a % 400 == 0) {
-            switch (mes) {
-                case 1:
-                    System.out.println("ENERO 31 DIAS");
-                    break;
-                case 2:
+        switch (mes) {
+            case 1:
+                System.out.println("ENERO 31 DIAS");
+                break;
+            case 2:
+                //comprobamos si es año bisiesto para sumar un dia a febrero 
+                if (calendar.isLeapYear(a)) {
                     System.out.println("FEBRERO 29 DIAS");
-                    break;
-                case 3:
-                    System.out.println("MARZO 31 DIAS");
-                    break;
-                case 4:
-                    System.out.println("ABRIL 30 DIAS");
-                    break;
-                case 5:
-                    System.out.println("MAYO 31 DIAS");
-                    break;
-                case 6:
-                    System.out.println("JUNIO 30 DIAS");
-                    break;
-                case 7:
-                    System.out.println("JULIO 31 DIAS");
-                    break;
-                case 8:
-                    System.out.println("AGOSTO 31 DIAS");
-                    break;
-                case 9:
-                    System.out.println("SEPTIEMBRE 30 DIAS");
-                    break;
-                case 10:
-                    System.out.println("OCTUBRE 31 DIAS");
-                    break;
-                case 11:
-                    System.out.println("NOVIEMBRE 30 DIAS");
-                    break;
-                case 12:
-                    System.out.println("DICIEMBRE 31 DIAS");
-            }
-        } else {
-            switch (mes) {
-                case 1:
-                    System.out.println("ENERO 31 DIAS");
-                    break;
-                case 2:
+                } else {
                     System.out.println("FEBRERO 28 DIAS");
-                    break;
-                case 3:
-                    System.out.println("MARZO 31 DIAS");
-                    break;
-                case 4:
-                    System.out.println("ABRIL 30 DIAS");
-                    break;
-                case 5:
-                    System.out.println("MAYO 31 DIAS");
-                    break;
-                case 6:
-                    System.out.println("JUNIO 30 DIAS");
-                    break;
-                case 7:
-                    System.out.println("JULIO 31 DIAS");
-                    break;
-                case 8:
-                    System.out.println("AGOSTO 31 DIAS");
-                    break;
-                case 9:
-                    System.out.println("SEPTIEMBRE 30 DIAS");
-                    break;
-                case 10:
-                    System.out.println("OCTUBRE 31 DIAS");
-                    break;
-                case 11:
-                    System.out.println("NOVIEMBRE 30 DIAS");
-                    break;
-                case 12:
-                    System.out.println("DICIEMBRE 31 DIAS");
-            }
+                }
+                break;
+            case 3:
+                System.out.println("MARZO 31 DIAS");
+                break;
+            case 4:
+                System.out.println("ABRIL 30 DIAS");
+                break;
+            case 5:
+                System.out.println("MAYO 31 DIAS");
+                break;
+            case 6:
+                System.out.println("JUNIO 30 DIAS");
+                break;
+            case 7:
+                System.out.println("JULIO 31 DIAS");
+                break;
+            case 8:
+                System.out.println("AGOSTO 31 DIAS");
+                break;
+            case 9:
+                System.out.println("SEPTIEMBRE 30 DIAS");
+                break;
+            case 10:
+                System.out.println("OCTUBRE 31 DIAS");
+                break;
+            case 11:
+                System.out.println("NOVIEMBRE 30 DIAS");
+                break;
+            case 12:
+                System.out.println("DICIEMBRE 31 DIAS");
         }
+
     }
 
 }
